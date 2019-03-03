@@ -8,7 +8,16 @@ public class App {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
+        PierwszaKlasa a = new PierwszaKlasa();
+        a.readLinesFromFile("U:\\dev\\Czytanie\\src\\main\\java\\pl\\saltsoft\\App.java");
+        a.writeFile("readme.md");
+
+      
     }
+
+
+
+
 }
