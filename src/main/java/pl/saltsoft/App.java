@@ -9,15 +9,9 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        Koty koty = new Koty("Puszek", 5.5, 1);
+        StartMany mlekoOdKrowJestZajebiaszcze = new StartMany();
 
-        Serializer b = new Serializer();
-        b.serialize(koty);
-
-        String jsonkoty = "{\"name\":\"Puszek\",\"waga\":5.5,\"ilosc\":1}";
-
-        Koty kotek = b.deserialize(jsonkoty);
-        System.out.println (kotek.name);
+        mlekoOdKrowJestZajebiaszcze.startManyWorkers(30);
 
     }
 
