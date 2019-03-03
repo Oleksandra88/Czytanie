@@ -4,14 +4,19 @@ import com.google.gson.Gson;
 
 public class Serializer {
 
-    void serialize () {
-        Koty koty = new Koty();
+    private Gson gson;
+
+    void serialize (Koty koty) {
+
         Gson gson = new Gson();
         String json = gson.toJson(koty);
-
+        System.out.println(json);
     }
 
-    void deserialize () {
+    Koty deserialize (String json) {
+        Gson gson = new Gson();
 
+        Koty kotyAgain = gson.fromJson(json, Koty.class);
+        return kotyAgain;
     }
 }

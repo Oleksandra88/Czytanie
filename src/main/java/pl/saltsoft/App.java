@@ -9,15 +9,17 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(new App().getGreeting());
-        PierwszaKlasa a = new PierwszaKlasa();
-        a.readLinesFromFile("U:\\dev\\Czytanie\\src\\main\\java\\pl\\saltsoft\\App.java");
-        a.writeFile("readme.md");
+        Koty koty = new Koty("Puszek", 5.5, 1);
 
-      
+        Serializer b = new Serializer();
+        b.serialize(koty);
+
+        String jsonkoty = "{\"name\":\"Puszek\",\"waga\":5.5,\"ilosc\":1}";
+
+        Koty kotek = b.deserialize(jsonkoty);
+        System.out.println (kotek.name);
+
     }
-
-
 
 
 }
